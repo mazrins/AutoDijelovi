@@ -1,0 +1,41 @@
+﻿@model IEnumerable<AutoDijelovi1.Models.Skladiste>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NazivSkladista)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lokacija)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NazivSkladista)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lokacija)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.SkladisteId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.SkladisteId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.SkladisteId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

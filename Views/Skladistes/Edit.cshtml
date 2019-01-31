@@ -1,0 +1,39 @@
+﻿@model AutoDijelovi1.Models.Skladiste
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Skladiste</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="SkladisteId" />
+            <div class="form-group">
+                <label asp-for="NazivSkladista" class="control-label"></label>
+                <input asp-for="NazivSkladista" class="form-control" />
+                <span asp-validation-for="NazivSkladista" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lokacija" class="control-label"></label>
+                <input asp-for="Lokacija" class="form-control" />
+                <span asp-validation-for="Lokacija" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
